@@ -10,11 +10,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import springtestingfeatures.configurations.App_LogReaderConfiguration;
+import springtestingfeatures.configurations.App_LoggerConfiguration;
 import springtestingfeatures.server.configurations.D03_PrimaryLoggerConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = {App_LogReaderConfiguration.class,
+								App_LoggerConfiguration.class,
 								D03_PrimaryLoggerConfiguration.class})
 public class D03_PrimaryBeanOverride {
 	

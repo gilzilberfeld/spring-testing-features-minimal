@@ -30,7 +30,6 @@ public class D08_Jdbc{
 	@Test
 	public void itemIsAddedByController_UsingJdbcTemplateToQuery() {
 		Item item = new Item("Item1", 2);
-
 		itemRepository.addItem(item);
 	
 		Item addedItem = jdbcTemplate.queryForObject(

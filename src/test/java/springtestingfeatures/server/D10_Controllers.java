@@ -28,19 +28,21 @@ import springtestingfeatures.server.configurations.D10_ControllerConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ContextConfiguration(classes= {D10_ControllerConfiguration.class})
 @Sql(scripts = "classpath:CreateItemsSchema.sql", 
 	executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @Sql(scripts = "classpath:DeleteItemsSchema.sql", 
 	executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+@ContextConfiguration(classes= {D10_ControllerConfiguration.class})
 @AutoConfigureMockMvc
 public class D10_Controllers {
 
 	@Autowired MockMvc mockMvc;
+	@Autowired ItemRepository itemRepository;
 	@Autowired ItemController controller;
 	
 	@Test public  void itLoads() {
 		assertNotNull(mockMvc);
+		assertNotNull(itemRepository);
 		assertNotNull(controller);
 	}
 	
@@ -51,7 +53,7 @@ public class D10_Controllers {
 		.andDo(print())
     	.andExpect(status().isServiceUnavailable());
 	}
-	/*
+	
 	@Test
 	public void whenItemsAreAdded_thenGetReturnsNumberOfItems() throws Exception {
 		
@@ -61,13 +63,13 @@ public class D10_Controllers {
 				.contentType("application/json"))
 	    		.andExpect(status().isOk());
 	    mockMvc.perform(
-	    		post("/items/add")
+	    		post("/items/add/")
 	    		.content(asJsonString("Item2"))
 				.contentType("application/json"))
 				.andExpect(status().isOk());
 
 	    MvcResult result =  mockMvc.perform(
-	    		get("/items"))
+	    		get("/items/"))
 	    	.andExpect(status().isOk())
 	    	.andReturn();
 	    
@@ -75,7 +77,7 @@ public class D10_Controllers {
     
 	}
 
-*/
+
 	private String asJsonString(Object obj) {
 	    try {
 	        return new ObjectMapper().writeValueAsString(obj);

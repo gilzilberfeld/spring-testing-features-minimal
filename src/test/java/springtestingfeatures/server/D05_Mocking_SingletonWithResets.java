@@ -31,6 +31,7 @@ public class D05_Mocking_SingletonWithResets{
 	public void setup()	{
 		Mockito.reset(mockLogger);
 	}
+	
 	@Test
 	public void firstTest() {
 		mockLogger.isOn();

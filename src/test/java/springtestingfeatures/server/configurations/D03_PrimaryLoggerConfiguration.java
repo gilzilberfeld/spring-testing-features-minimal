@@ -13,7 +13,6 @@ import springtestingfeatures.configurations.App_LoggerConfiguration;
 import springtestingfeatures.server.Logger;
 
 @Configuration
-@Import(App_LoggerConfiguration.class)
 public class D03_PrimaryLoggerConfiguration {
 
 	@Primary

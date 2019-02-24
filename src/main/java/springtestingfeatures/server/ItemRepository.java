@@ -32,8 +32,9 @@ public class ItemRepository {
 
 	}
 	
-	public List<Item> getAllItems() {
-		return jdbcTemplate.queryForList(
-				"select * from items", Item.class);
+	public int findTotal() {
+		int total = jdbcTemplate.
+				queryForObject("select count(*) from items", Integer.class);
+		return total;
 	}
 }

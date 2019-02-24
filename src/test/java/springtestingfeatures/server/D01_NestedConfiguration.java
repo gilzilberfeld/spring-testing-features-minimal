@@ -1,6 +1,7 @@
 package springtestingfeatures.server;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
@@ -31,10 +32,7 @@ public class D01_NestedConfiguration {
 		
 		@Bean
 		public Logger logger() {
-			return new Logger();
+			return mock(Logger.class);
 		}
 	}
-	
-
-
 }
