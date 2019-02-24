@@ -11,7 +11,7 @@ import springtestingfeatures.server.Logger;
 
 @Configuration
 @Import(App_LogReaderConfiguration.class)	
-public class D2_TestLoggerConfiguration {
+public class D02_LoggerConfiguration {
 
 	@Bean
 	public Logger mocklogger() {

@@ -9,11 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import springtestingfeatures.server.configurations.D2_TestLoggerConfiguration;
+import springtestingfeatures.server.configurations.D02_LoggerConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ContextConfiguration(classes = {D2_TestLoggerConfiguration.class})
+@ContextConfiguration(classes = {D02_LoggerConfiguration.class})
 public class D02_ImportedConfigurationTests{
 
 	@Autowired LogReader reader;

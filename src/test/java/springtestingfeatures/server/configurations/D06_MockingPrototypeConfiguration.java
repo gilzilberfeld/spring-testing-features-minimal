@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
 import springtestingfeatures.server.Logger;
-public class D6_TestMockingPrototypeConfiguration {
+public class D06_MockingPrototypeConfiguration {
 
 	@Bean
 	@Scope("prototype")

@@ -16,13 +16,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import springtestingfeatures.configurations.App_LogReaderConfiguration;
-import springtestingfeatures.server.configurations.D2_TestLoggerConfiguration;
-import springtestingfeatures.server.configurations.D6_TestMockingPrototypeConfiguration;
+import springtestingfeatures.server.configurations.D02_LoggerConfiguration;
+import springtestingfeatures.server.configurations.D06_MockingPrototypeConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = {App_LogReaderConfiguration.class,
-								D6_TestMockingPrototypeConfiguration.class})
+								D06_MockingPrototypeConfiguration.class})
 public class D06_Mocking_Prototype{
 
 	@Autowired Logger mockLogger;

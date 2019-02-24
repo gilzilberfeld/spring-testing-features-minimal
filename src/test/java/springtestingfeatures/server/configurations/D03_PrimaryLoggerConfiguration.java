@@ -14,7 +14,7 @@ import springtestingfeatures.server.Logger;
 
 @Configuration
 @Import(App_LoggerConfiguration.class)
-public class D3_TestPrimaryLoggerConfiguration {
+public class D03_PrimaryLoggerConfiguration {
 
 	@Primary
 	@Bean
